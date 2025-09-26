@@ -8,13 +8,13 @@ local set = vim.api.nvim_set_hl
 
 -- Pastel colors
 local colors = {
-  bg       = "#fdfdfd",
-  fg       = "#333333",
-  comment  = "#aaaaaa",
-  blue     = "#6c9dc6",
-  green    = "#7fc7b2",
-  orange   = "#f4a261",
-  linebg   = "#f6f6f6",
+  bg       = "#e0e0e0",   -- darker background
+  fg       = "#222222",   -- darker foreground
+  comment  = "#7a7a7a",   -- darker comment
+  blue     = "#3a6a8c",   -- darker blue
+  green    = "#3e7c68",   -- darker green
+  orange   = "#b96a2b",   -- darker orange
+  linebg   = "#d3d3d3",   -- darker line background
 }
 
 -- UI
@@ -36,7 +36,7 @@ set(0, "Type",          { fg = colors.blue })
 set(0, "@string.documentation.python", { fg = colors.comment, italic = true })
 
 -- Optional: Diagnostics
-set(0, "DiagnosticError", { fg = "#e57373" })
-set(0, "DiagnosticWarn",  { fg = "#fdd835" })
+set(0, "DiagnosticError", { fg = "#b0413e" })
+set(0, "DiagnosticWarn",  { fg = "#b89c1d" })
 set(0, "DiagnosticInfo",  { fg = colors.blue })
 set(0, "DiagnosticHint",  { fg = colors.green })
