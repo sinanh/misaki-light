@@ -1,0 +1,2 @@
+# misaki-light
+nvim theme
