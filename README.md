@@ -40,7 +40,7 @@ A minimal and elegant light color scheme for Neovim with soft pastel colors desi
 {
   "sinanh/misaki-light",
   config = function()
-    vim.cmd("colorscheme misaki")
+    vim.cmd("colorscheme misaki-light")
   end
 }
 ```
@@ -51,7 +51,7 @@ A minimal and elegant light color scheme for Neovim with soft pastel colors desi
 use {
   "sinanh/misaki-light",
   config = function()
-    vim.cmd("colorscheme misaki")
+    vim.cmd("colorscheme misaki-light")
   end
 }
 ```
@@ -65,7 +65,7 @@ Plug 'sinanh/misaki-light'
 Then add to your `init.vim` or `init.lua`:
 
 ```vim
-colorscheme misaki
+colorscheme misaki-light
 ```
 
 ### Manual Installation
@@ -87,14 +87,14 @@ cp misaki-light/colors/misaki-light.lua ~/AppData/Local/nvim/colors/
 3. Add to your Neovim configuration:
 ```lua
 -- init.lua
-vim.cmd("colorscheme misaki")
+vim.cmd("colorscheme misaki-light")
 ```
 
 or
 
 ```vim
 " init.vim
-colorscheme misaki
+colorscheme misaki-light
 ```
 
 ## Configuration
@@ -106,7 +106,7 @@ The theme works out of the box, but you can customize it further:
 vim.o.background = "light"
 
 -- Apply the colorscheme
-vim.cmd("colorscheme misaki")
+vim.cmd("colorscheme misaki-light")
 
 -- Optional: Configure additional highlight groups
 vim.api.nvim_set_hl(0, "MyCustomGroup", { fg = "#3a6a8c", bold = true })
