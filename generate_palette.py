@@ -1,0 +1,253 @@
+#!/usr/bin/env python3
+"""
+Simple HTML-based color palette generator for misaki-light colorscheme
+"""
+
+def create_simple_palette():
+    html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misaki Light - Color Palette</title>
+    <style>
+        body {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            background-color: #e0e0e0;
+            color: #222222;
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #3a6a8c;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .color-item {
+            border: 1px solid #7a7a7a;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .color-swatch {
+            height: 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+        
+        .color-info {
+            padding: 15px;
+            background: white;
+        }
+        
+        .color-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #222222;
+        }
+        
+        .color-hex {
+            font-family: 'JetBrains Mono', monospace;
+            color: #7a7a7a;
+            margin-top: 5px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #3a6a8c;
+            margin: 30px 0 20px 0;
+            border-bottom: 2px solid #d3d3d3;
+            padding-bottom: 10px;
+        }
+        
+        .bg { background-color: #e0e0e0; color: black; }
+        .fg { background-color: #222222; }
+        .comment { background-color: #7a7a7a; }
+        .blue { background-color: #3a6a8c; }
+        .green { background-color: #3e7c68; }
+        .orange { background-color: #b96a2b; }
+        .linebg { background-color: #d3d3d3; color: black; }
+        .error { background-color: #b0413e; }
+        .warn { background-color: #b89c1d; }
+        
+        .usage-examples {
+            background: #d3d3d3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .usage-item {
+            margin: 10px 0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .swatch-inline {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 Misaki Light Color Palette</h1>
+        
+        <div class="section-title">Core Colors</div>
+        <div class="color-grid">
+            <div class="color-item">
+                <div class="color-swatch bg">Background</div>
+                <div class="color-info">
+                    <div class="color-name">Background</div>
+                    <div class="color-hex">#e0e0e0</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch fg">Foreground</div>
+                <div class="color-info">
+                    <div class="color-name">Foreground</div>
+                    <div class="color-hex">#222222</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch comment">Comment</div>
+                <div class="color-info">
+                    <div class="color-name">Comment</div>
+                    <div class="color-hex">#7a7a7a</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch blue">Blue</div>
+                <div class="color-info">
+                    <div class="color-name">Blue</div>
+                    <div class="color-hex">#3a6a8c</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch green">Green</div>
+                <div class="color-info">
+                    <div class="color-name">Green</div>
+                    <div class="color-hex">#3e7c68</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch orange">Orange</div>
+                <div class="color-info">
+                    <div class="color-name">Orange</div>
+                    <div class="color-hex">#b96a2b</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch linebg">Line BG</div>
+                <div class="color-info">
+                    <div class="color-name">Line Background</div>
+                    <div class="color-hex">#d3d3d3</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">Diagnostic Colors</div>
+        <div class="color-grid">
+            <div class="color-item">
+                <div class="color-swatch error">Error</div>
+                <div class="color-info">
+                    <div class="color-name">Error</div>
+                    <div class="color-hex">#b0413e</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch warn">Warning</div>
+                <div class="color-info">
+                    <div class="color-name">Warning</div>
+                    <div class="color-hex">#b89c1d</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch blue">Info</div>
+                <div class="color-info">
+                    <div class="color-name">Info</div>
+                    <div class="color-hex">#3a6a8c</div>
+                </div>
+            </div>
+            
+            <div class="color-item">
+                <div class="color-swatch green">Hint</div>
+                <div class="color-info">
+                    <div class="color-name">Hint</div>
+                    <div class="color-hex">#3e7c68</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="usage-examples">
+            <div class="section-title">Usage Examples</div>
+            <div class="usage-item">
+                <span class="swatch-inline blue"></span>Keywords, Types, Booleans
+            </div>
+            <div class="usage-item">
+                <span class="swatch-inline green"></span>Strings, Constants
+            </div>
+            <div class="usage-item">
+                <span class="swatch-inline orange"></span>Functions, Classes
+            </div>
+            <div class="usage-item">
+                <span class="swatch-inline comment"></span>Comments, Documentation
+            </div>
+            <div class="usage-item">
+                <span class="swatch-inline linebg"></span>Current Line Background
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #7a7a7a;">
+            <p>Generated for <strong>misaki-light</strong> Neovim colorscheme</p>
+        </div>
+    </div>
+</body>
+</html>"""
+    
+    return html
+
+if __name__ == "__main__":
+    html_content = create_simple_palette()
+    
+    with open("misaki-light-palette.html", "w") as f:
+        f.write(html_content)
+    
+    print("Color palette HTML generated: misaki-light-palette.html")
+    print("Open this file in your browser to view the color palette!")
+    print("You can then take a screenshot to use in your documentation.")
