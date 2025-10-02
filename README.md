@@ -119,7 +119,9 @@ vim.api.nvim_set_hl(0, "MyCustomGroup", { fg = "#3a6a8c", bold = true })
 
 ## Screenshots
 
-*Coming soon - Add screenshots of your theme in action with different file types*
+![Misaki Light Screenshot](screenshot.png)
+
+*The screenshot above shows misaki-light theme in action with Python code, demonstrating the clean syntax highlighting and comfortable light background.*
 
 ## Contributing
 
